@@ -16,7 +16,7 @@ I integrate my following skills through this capstone project.
 - Deploying Applications
 
 ## Heroku Link
-https://vamsi-casting-agency.herokuapp.com/
+https://vamsi-capstone-heroku.herokuapp.com/
 
 ## Getting Started
 ### Installing Dependencies
@@ -153,7 +153,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of movies.
 - Sample: `{{host}}/movies`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "movies": [
@@ -194,7 +194,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of actors.
 - Sample: `{{host}}/actors`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "actors": [
@@ -252,7 +252,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of casting.
 - Sample: `{{host}}/casting`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "casting": [
@@ -308,7 +308,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of the created movie.
 - Sample: `{{host}}/movies`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "new_movie": {
@@ -327,7 +327,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of the created actor.
 - Sample: `{{host}}/actors`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "new_actor": {
@@ -347,7 +347,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of the created casting.
 - Sample: `{{host}}/casting`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "new_casting": {
@@ -366,7 +366,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token and an ID of a movie to update.
     - Return: success value and a dictionary of the updated movie.
 - Sample: `{{host}}/movies/5`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "success": true,
@@ -385,7 +385,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token and an ID of an actor to update.
     - Return: success value and a dictionary of the updated actor.
 - Sample: `{{host}}/actors/5`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "success": true,
@@ -405,7 +405,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token and an ID of a casting to update.
     - Return: success value and a dictionary of the updated casting.
 - Sample: `{{host}}/casting/5`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "success": true,
@@ -424,7 +424,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token and an ID of a movie to delete.
     - Return: success value and the ID of a deleted movie.
 - Sample: `{{host}}/movies/4`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "deleted_movie": 4,
@@ -439,7 +439,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token and an ID of an actor to delete.
     - Return: success value and the ID of a deleted actor.
 - Sample: `{{host}}/actors/4`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "deleted_actor": 4,
@@ -454,7 +454,7 @@ The API will return seven error types when requests fail:
     - Request Arguments: JWT token and an ID of a casting to delete.
     - Return: success value and the ID of a deleted casting.
 - Sample: `{{host}}/casting/4`
-    - Please use postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
     "deleted_casting": 4,
@@ -464,14 +464,14 @@ The API will return seven error types when requests fail:
 
 ## Test on heroku
 - Test the endpoints with Postman. 
-    - Import the postman collection `./vamsi-casting-agency.postman_collection.json`
+    - Import the postman collection `./vamsi-capstone-heroku.postman_collection.json`
     - Run the collection.
 
 - Database on heroku can be recreated by the following steps.
     - Run `heroku pg:psql`
     - Execute `TRUNCATE "Casting";`, `TRUNCATE "Movies" CASCADE;`, and `TRUNCATE "Actor" CASCADE;`
     - Exit heroku psql
-    - Import data with `heroku pg:psql --app vamsi-casting-agency postgresql-triangular-64018 < data.dump`
+    - Import data with `heroku pg:psql --app vamsi-capstone-heroku postgresql-triangular-39700 < data.sql`
 
 ## Test on local
 - Database on local can be created by the following steps.

@@ -1,0 +1,1941 @@
+{
+	"info": {
+		"_postman_id": "216be99e-b825-4ff6-9ae2-71bb39998e85",
+		"name": "vamsi-capstone-heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Casting Assistant",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "16008ce0-0db9-44d1-af7b-c47c52135a14",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "36c14654-5452-4f2b-b72b-fa159370d06a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e8841fe-d51c-440b-b46a-519264fb3724",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aae45571-68f4-4270-9939-91f9d5be789c",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0c2c1a7-4bb2-404f-a343-e96fb338a047",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 50,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f00c576e-fdca-4207-823b-f64e31b714dc",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 8,\r\n    \"movie_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bd603aa0-6eb4-4501-8162-be3b292bf661",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies/5",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b695ec31-8b6d-4e47-b8d3-2e8708cd26e8",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 100,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors/5",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "af13fcb2-e651-445a-9f17-cea6c1fb31e7",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 1,\r\n    \"movie_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting/5",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8b6d6324-62b9-4036-816a-81a450a3e543",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies/4",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eee1832b-3380-468e-a290-8bc3d4b492f9",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors/4",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6f3e97f5-a61d-40e6-aa44-b80e12a9481c",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting/4",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2e430245-5d43-4047-a61a-f01841546e1c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e879c2eb-87bc-419d-9915-f31970fef24b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Casting Director",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f6dbad21-9c86-436c-b02f-7bf23578f03f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "79399d75-4de4-410d-b879-fd7b1486cc20",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "acad2908-8933-46a4-8b7e-9b62378b3ca0",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d1205dd9-8b4d-4efd-9d9a-453d4c71d6e7",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ee7a85dd-36ce-4aba-bf1d-f024a4d22863",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 50,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8a8b07ab-8a4a-47a1-b98e-5cc660fed760",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 8,\r\n    \"movie_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0069f9b5-450c-4e03-8a16-07af6babc599",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies/5",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "759490bc-e88e-4a4c-a1f6-4668d5c8d8aa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 100,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0fb0ea4b-e090-4ea4-af21-029d6f5370f1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 1,\r\n    \"movie_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting/1",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0355695f-c7d4-4331-bf35-d28487cb1af2",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies/4",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "12766ea0-1de1-4892-91cb-91d71114ae0c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors/3",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d37cd996-3df2-4cb9-84fc-b43fd6e12ec7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting/3",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Executive Producer",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "589b73d1-bd41-4287-9162-ca43a46e2b98",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec42716e-14a0-44fe-b0e7-911e70d8f191",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3decd661-21a5-47e5-9543-bbaddb42906f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9b5ce064-53da-40b9-9fba-6c1f80e7491c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0ffcc29f-63d8-4678-a82b-9672d8be7ee2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 50,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "667c5704-bd78-4615-86f6-86340da8a789",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 8,\r\n    \"movie_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "da977f6f-a0b3-418d-b9f8-89c1eee40ccb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies/5",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26d56c68-3f4e-446b-8d65-cd7714eb1c3e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 100,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors/2",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e8957e8-c7b1-4712-a22f-b65648ad7af3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 1,\r\n    \"movie_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting/2",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "25f7fb89-1a81-4003-b404-378fda7e21d7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/movies/4",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7ab7afee-1f77-4a33-8d1e-a9c816b17739",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/actors/4",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ddc2446f-d899-424d-983c-3664c48fee79",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://vamsi-capstone-heroku.herokuapp.com/casting/6",
+							"protocol": "https",
+							"host": [
+								"vamsi-capstone-heroku",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "de6913eb-771f-4b92-8e5b-0886192d6de7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "bbd2c171-6fb0-4e8d-97af-4b15a5082c5e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

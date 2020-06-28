@@ -22,7 +22,8 @@ def create_app(test_config=None):
     # Create and configure the app
     app = Flask(__name__)
     setup_db(app)
-    CORS(app)
+    #CORS(app)
+    CORS(app, resources={'/': {"origins": "*"}})  # Set up CORS. Allow '*' for origins.
 
     @app.after_request
     def after_request(response):
@@ -31,6 +32,12 @@ def create_app(test_config=None):
         return response
 
     # ROUTES
+
+    '''default endpoint'''
+
+    @app.route('/', methods=['POST', 'GET'])
+    def health():
+        return jsonify("Healthy"),200
 
     # MOVIES
 
