@@ -207,7 +207,7 @@ COPY public."Movie" (id, title, release_date) FROM stdin;
 --
 
 COPY public.alembic_version (version_num) FROM stdin;
-0ed757ac4825
+2d4bafaa252a
 \.
 
 

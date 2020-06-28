@@ -476,11 +476,11 @@ The API will return seven error types when requests fail:
 ## Test on local
 - Database on local can be created by the following steps.
     - Run `CREATE DATABASE casting_agency_db;` to create a database for test.
-    - Import data and database schema with `psql -U vamsi casting_agency_db < createdb.sql`
+    - Import data and database schema with `psql -U postgres casting_agency_db < createdb.sql`
 
 - Database on local can be recreated by the following steps.
     - Execute `TRUNCATE "Casting";`, `TRUNCATE "Movies" CASCADE;`, and `TRUNCATE "Actor" CASCADE;`
-    - Import data and database schema with `psql -U vamsi casting_agency_db < data.sql`
+    - Import data and database schema with `psql -U postgres casting_agency_db < data.sql`
     
 - Test the endpoints by running `test_app.py`
     - Execute `source setup.sh`

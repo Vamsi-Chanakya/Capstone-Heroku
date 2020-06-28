@@ -1,3 +1,6 @@
+export FLASK_APP=app.py;
+export FLASK_ENV=debug;
+
 export AUTH0_DOMAIN='vamsichanakya.auth0.com'
 export ALGORITHMS=['RS256']
 export API_AUDIENCE='Casting_Agency'
