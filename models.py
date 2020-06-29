@@ -6,11 +6,10 @@ import json
 
 database_name = "casting_agency_db"
 database_path = os.environ.get('DATABASE_URL')
+
 if not database_path:
     database_name = "casting_agency_db"
-    database_path = "postgres://{}:{}@{}/{}".format('postgres', 'postgres',
-                                                    'localhost:5432',
-                                                    database_name)
+    database_path = "postgres://{}:{}@{}/{}".format('postgres', 'postgres', 'localhost:5432', database_name)
 
 db = SQLAlchemy()
 
@@ -27,17 +26,34 @@ def setup_db(app, database_path=database_path):
     db.app = app
     db.init_app(app)
 
+'''
+    db_drop_and_create_all()
+    drops the database tables and starts fresh
+    can be used to initialize a clean database
+    !!NOTE you can change the database_filename variable to have multiple verisons of a database
+'''
+
+
+# def db_drop_and_create_all():
+#     db.drop_all()
+#     db.create_all()
+
+'''
+Movie
+a persistent Movie entity, extends the base SQLAlchemy Model
+contains all movies in which casting agency is involved
+there is a relation between Movie and Casting Tables
+'''
 
 class Movie(db.Model):
-    # This Movie table uniquely lists all the movies that the agency involved.
-    # There is a 1 to many relationships between Movie and Casting tables.
     __tablename__ = 'Movie'
-
+    # Autoincrementing, unique primary key
     id = db.Column(db.Integer, primary_key=True)
+    # String Movie Title
     title = db.Column(db.String(120), nullable=False)
-    release_date = db.Column(db.Date)
-    casting = db.relationship('Casting',
-                              backref=db.backref('Movie', lazy=True))
+    # Release Date of the Movie
+    release_date = db.Column(db.Date, nullable=False)
+    casting = db.relationship('Casting', backref=db.backref('Movie', lazy=True))
 
     def __init__(self, title, release_date):
         self.title = title
@@ -61,15 +77,23 @@ class Movie(db.Model):
         db.session.delete(self)
         db.session.commit()
 
+'''
+Actor
+a persistent Actor entity, extends the base SQLAlchemy Model
+contains all actors information who belongs to casting agency 
+there is a relation between Actor and Casting Tables
+'''
 
 class Actor(db.Model):
-    # This Actor table uniquely lists all the actors who belong to the agency.
-    # There is a 1 to many relationships between Actor and Casting tables.
     __tablename__ = 'Actor'
 
+    # Autoincrementing, unique primary key
     id = db.Column(db.Integer, primary_key=True)
+    # String Name of the Actor
     name = db.Column(db.String(60), nullable=False)
+    # Age of the Actor
     age = db.Column(db.Integer, nullable=False)
+    # String Gender of the actor
     gender = db.Column(db.String(20), nullable=False)
     casting = db.relationship('Casting',
                               backref=db.backref('Actor', lazy=True,
@@ -99,10 +123,14 @@ class Actor(db.Model):
         db.session.delete(self)
         db.session.commit()
 
-
+'''
+Casting
+a persistent Casting entity, extends the base SQLAlchemy Model
+This Casting table is created for database normalization.
+'''
 class Casting(db.Model):
-    # This Casting table is created for database normalization.
     __tablename__ = 'Casting'
+    # Autoincrementing, unique primary key
     id = db.Column(db.Integer, primary_key=True)
     actor_id = db.Column(db.Integer, db.ForeignKey('Actor.id',
                                                    ondelete='CASCADE'))

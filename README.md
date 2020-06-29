@@ -1,19 +1,20 @@
-# Capstone Casting Agency Project
+# Udacity FSND Capstone Project - Casting Agency 
 
 ## Motivation for project
-I integrate my following skills through this capstone project. 
 
-- Coding in Python 3
-- Relational Database Architecture
-- Modeling Data Objects with SQLAlchemy
-- Internet Protocols and Communication
-- Developing a Flask API
-- Authentication and Access
-- Authentication with Auth0
-- Authentication in Flask
-- Role-Based Access Control (RBAC)
-- Testing Flask Applications
-- Deploying Applications
+Integrating my below skills through this capstone project. 
+
+Coding in Python 3
+Relational Database Architecture
+Modeling Data Objects with SQLAlchemy
+Internet Protocols and Communication
+Developing a Flask API
+Authentication and Access
+Authentication with Auth0
+Authentication in Flask
+Role-Based Access Control (RBAC)
+Testing Flask Applications
+Deploying Applications
 
 ## Heroku Link
 https://vamsi-capstone-heroku.herokuapp.com/
@@ -27,13 +28,16 @@ Follow instructions to install the latest version of python for your platform in
 
 #### Virtual Enviornment
 
-We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organaized. Instructions for setting up a virual enviornment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+We recommend working within a virtual environment whenever using Python for projects. 
+This keeps your dependencies for each project separate and organized. Instructions for setting up a virual enviornment for your platform can be found in the [python docs](https://docs.python-guide.org/dev/virtualenvs/)
 
 #### PIP Dependencies
 
-Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
+Once you have your virtual environment setup, install dependencies by running:
 
 ```bash
+virtualenv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -67,53 +71,163 @@ flask run --reload
 The `--reload` flag will detect file changes and restart the server automatically.
 
 ## Casting Agency Specification
-The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. You are an Executive Producer within the company and are creating a system to simplify and streamline your process.
+The Casting Agency models a company which is responsible for creating movies and managing and assigning actors of those movies. 
+We are creating a system to simplify and streamline your process.
 
 ### Data Models
 - Movie with attributes title and release date
 - Actor with attributes name, age and gender
 - Casting with attributes actor_id and movie_id
 
-### Endpoints
-- GET /actors, /movies and /casting
-- POST /actors, /movies and /casting
-- PATCH /actors, /movies/ and /casting
-- DELETE /actors, /movies/ and /casting
-
-### Roles
-Casting Assistant
-- has following permissions for actions. 
-    - `get:movies`, `get:actors`, `get:casting`
-
-Casting Director
-- has following permissions for actions. 
-    - `get:movies`, `get:actors`, `get:casting`
-    - `post:actors`, `post:casting`
-    - `patch:movies`, `patch:actors`, `patch:casting`
-    - `delete:actors`, `delete:casting`
-
-Executive Producer
-- has following permissions for actions. 
+## Authentication
+Task for Setup Auth0
+1. Create a new Auth0 Account 
+2. Select a unique tenant domain 
+3. Create a new, single page web application 
+4. Create a new API
+    * in API Settings:
+        * Enable RBAC
+        * Enable Add Permissions in the Access Token
+5. Create new API permissions:
+    "delete:actors",
+    "delete:casting",
+    "delete:movies",
+    "get:actors",
+    "get:casting",
+    "get:movies",
+    "patch:actors",
+    "patch:casting",
+    "patch:movies",
+    "post:actors",
+    "post:casting",
+    "post:movies"
+6. Create new roles for:
+    * Casting Assistant - has following permissions for actions. 
+        - `get:movies`, `get:actors`, `get:casting`
+    * Casting Director - has following permissions for actions. 
+        - `get:movies`, `get:actors`, `get:casting`
+        - `post:actors`, `post:casting`
+        - `patch:movies`, `patch:actors`, `patch:casting`
+        - `delete:actors`, `delete:casting`
+    * Executive Producer - has following permissions for actions. 
     - `get:movies`, `get:actors`, `get:casting`
     - `post:movies`, `post:actors`, `post:casting`
     - `patch:movies`, `patch:actors`, `patch:casting`
     - `delete:movies`, `delete:actors`, `delete:casting`
+7. Endpoints
+    - GET /actors, /movies and /casting
+    - POST /actors, /movies and /casting
+    - PATCH /actors, /movies/ and /casting
+    - DELETE /actors, /movies/ and /casting
+
 
 ### Authentication (bearer tokens)
+
 Casting Assistant
 ```
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc1OTI4NCwiZXhwIjoxNTg4NzY2NDg0LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.heFxFPKRTQqH_Rv5YfuwwJbq-nIk7l2INfh3e9G9w_75jn8yJpQrBX4ApVLKXgEc0v4R-6sxNPDJX3oEe6w1AC8A5SgOXJCBEpg8S_UZOmvQD-aF7l3h2ybotYBRy9rSYQCwuKPR-Z_4guNtTVM3qWwR8Lppg78KJbfrNowbiK-kwCR9zmLrT5WLc0cj6rqsYzrQid49rxdVgd1Ds96uxdypU68r4NYfOKhgEbTgbh4wtARypDtcNEXJ4gvNqBEVtURhvI2x0mPBNgwe2eAHaQUCphUstCy6rKo4TIUVGNfE3teD9f4EXNNUfoId87w6K_YEIaDxrls_iw6e9e2q5g
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmN2U0ZTgyNGE1MDAxOTIwODhmYiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3MTkyLCJleHAiOjE1OTM0MTM1OTIsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIl19.ety0mr-8mRq_v5hO-6yJBGnh0tiJS5n9jQOrGN_nRu4SLBxfEmD2G3X-EPPb_SAtV5l_RUUSlLRF4X8djKwBmVrUOFCjoClz-4w_iZW4JL1-xI0CtPl9Jc2ENy00_kjp-IV9TiLB5MR5M_1tH0dntQKWS-T-9f6NUDpjQW17Q2mvnbY8egxvxYCCX4pshLG7Z6JQELD-nEikL5vGZHvXO1384db6LFOg5XrBWYtslKf4UTrez3IxcqQOzL5kfFbbwKaiYOWTIC9_dHd7EH5mHk1Ienc7yANa2Ynpu3MccacKKX7r8u8dyJDcWvxNLkU-TpgyQ2yVBjYDYXDPpGwQEQ
+```
+```
+{
+  "iss": "https://vamsichanakya.auth0.com/",
+  "sub": "auth0|5ef7f7e4e824a500192088fb",
+  "aud": "Casting_Agency",
+  "iat": 1593327192,
+  "exp": 1593413592,
+  "azp": "IepFAcM6hLIDDdipRlsxR3XqJB1kJoDk",
+  "scope": "",
+  "permissions": [
+    "get:actors",
+    "get:casting",
+    "get:movies"
+  ]
+}
 ```
 
 Casting Director
 ```
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc1OTQ0NSwiZXhwIjoxNTg4NzY2NjQ1LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZhWJ5-HZraGw7EVldjk0KklzHQT7x_zWs7u7g0JY-JD17UKd_pqASwDYZhFddvCgftt-gi_QaB2-Ek_jQHSvF5bj8neuDgPc-chkGwW5vY2h-ONNlkncyIlGMzNaFnKqBmRwIGw_8024lFyh2tjjDy0NpKIqSQCYF24ZpM-yddhh3uOVhN2rBgUnj2emB_ei2Mg63iM_Q4drQurxSR35ipSQnxsFXB9JZJTNaJss5COVA0a-ndL4aia0y4Jxqoe6fTDk14Apw9vikM5UR3s8m5qwPnC_JnNjlqZMjnd7pMfq9HAq2cBGXp_PlSXy-m_uiaoLSXp-8zoVpG-LpjralQ
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmODEyZTgyNGE1MDAxOTIwODkxYyIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDIzLCJleHAiOjE1OTM0MTM4MjMsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJnZXQ6YWN0b3JzIiwiZ2V0OmNhc3RpbmciLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6Y2FzdGluZyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpjYXN0aW5nIl19.oADQg0NgVF5V989VGOakiloHaPidEdC0roJ6Gpc70pbCLtv4hntssBS-CdAzVhympYqWdomlkWugoaInfW1J9RRcdyNiZuMHMEEAUB7904zdCb0ZiS3vChIOTfxpCeZG1mTLvgq7UbzU4xBa7ZKvkPmgsnMmomoPV1Lj8nQYhqPmL3Yz1oJLWlNEz7ooLS6jlES_ISRU0l5XuhpIMiRL3zTskVvx-QCLRQNuaredrIZfIvq13LYPAZv96D8hCBFsai4aeUhitQB8IApTOJTKV2LfMrbN-oIzg8HPd9VAK1OIJ0AlI5sUdvwbnrIh6Xhs2I_hMV0bJ6DHsSRTJH0fLg
+```
+
+```
+{
+  "iss": "https://vamsichanakya.auth0.com/",
+  "sub": "auth0|5ef7f812e824a5001920891c",
+  "aud": "Casting_Agency",
+  "iat": 1593327423,
+  "exp": 1593413823,
+  "azp": "IepFAcM6hLIDDdipRlsxR3XqJB1kJoDk",
+  "scope": "",
+  "permissions": [
+    "delete:actors",
+    "delete:casting",
+    "get:actors",
+    "get:casting",
+    "get:movies",
+    "patch:actors",
+    "patch:casting",
+    "patch:movies",
+    "post:actors",
+    "post:casting"
+  ]
+}
 ```
 
 Executive Producer
 ```
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc1OTU5MSwiZXhwIjoxNTg4NzY2NzkxLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.J5F8-Kp7-5UXpki3Ugqi2952BAMzDb1Ca9Z-jKiEtjvETpGqWaDFYlOBEZSz2Tr9pBANO4IgcAwXE8DDI747VT5HreCQSA1KTyiDzL7c4TwLuuG_VhMlaZTXTZEegbQ8bNKRP_o-CGd86OshRJYCY9fj_P0N7IZgoLTJILj1CdR3V-7gdLSsAln_74viX6p9ifD3y3gn7nxLDm7Vu7KiJ7oBNy1cXkU5RL_-yWz2MbK_SWJBjyPmY9NMSFBn3d02qQsNiK-UkfoirQ_wS2V0gSSBe8-xlRtMmgdzLBo7-XExMI7x1zAnd4d54IyylRjnMjnPyCv6XM2VmHX7lrYVzw
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlpDblFvOGRUUHNoWjhPelFQM05XVSJ9.eyJpc3MiOiJodHRwczovL3ZhbXNpY2hhbmFreWEuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZjdmOGFkMzUyZDhmMDAxM2MzNzM1YiIsImF1ZCI6IkNhc3RpbmdfQWdlbmN5IiwiaWF0IjoxNTkzMzI3NDk2LCJleHAiOjE1OTM0MTM4OTYsImF6cCI6IkllcEZBY002aExJRERkaXBSbHN4UjNYcUpCMWtKb0RrIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNhc3RpbmciLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyIsInBvc3Q6bW92aWVzIl19.L62u6YX_fATBO-MUF-oJD-AHSlVseQfFXfT5z9WGSLv3BmFkECp8GyZP2nNMWUMtZn5ePe3fuUh540k22PYp2LocjkTnlAFC_H9zJJEXjeq-zJXPd4-MwdMXWcse4benAGeulmImwAqdVftxSgTjHnItC3r7nhX-n6kK-1fEHAkcUThYZK_xoj9XuSDHfhwmEaumSw1YhZS2p6Ap__ngO3qAe909UNMD3crtRp3yjmhQt4UGTd0dyU83H1Tym1-DL0rBV0o7kofjjcw3AjeUWAXz0GWS3lXe7tgAHv73g7e35FKHTbQC_vkUWWGPb4kCczXKKCKX_vOGEr-pXBR6yA
 ```
+
+```
+{
+  "iss": "https://vamsichanakya.auth0.com/",
+  "sub": "auth0|5ef7f8ad352d8f0013c3735b",
+  "aud": "Casting_Agency",
+  "iat": 1593327496,
+  "exp": 1593413896,
+  "azp": "IepFAcM6hLIDDdipRlsxR3XqJB1kJoDk",
+  "scope": "",
+  "permissions": [
+    "delete:actors",
+    "delete:casting",
+    "delete:movies",
+    "get:actors",
+    "get:casting",
+    "get:movies",
+    "patch:actors",
+    "patch:casting",
+    "patch:movies",
+    "post:actors",
+    "post:casting",
+    "post:movies"
+  ]
+}
+```
+
+## Test on local
+- Database on local can be created by the following steps.
+    - Run `CREATE DATABASE casting_agency_db;` to create a database for test.
+    - Import data and database schema with `psql -U postgres casting_agency_db < createdb.sql`
+
+- Database on local can be recreated by the following steps.
+    - Execute `TRUNCATE "Casting";`, `TRUNCATE "Movie" CASCADE;`, and `TRUNCATE "Actor" CASCADE;`
+    - Import data and database schema with `psql -U postgres casting_agency_db < data.sql`
+    
+- Test the endpoints by running `test_app.py`
+    - Execute `source setup.sh`
+    - Execute `python3 test_app.py`
+
+## Test on heroku
+- Test the endpoints with Postman. 
+    - Import the postman collection `./vamsi-capstone-heroku.postman_collection.json`
+    - Run the collection.
+
+- Database on heroku can be recreated by the following steps.
+    - Run `heroku pg:psql`
+    - Execute `TRUNCATE "Casting";`, `TRUNCATE "Movies" CASCADE;`, and `TRUNCATE "Actor" CASCADE;`
+    - Exit heroku psql
+    - Import data with `heroku pg:psql --app vamsi-capstone-heroku postgresql-triangular-39700 < data.sql`
+
 
 ## Error Handling
 
@@ -152,7 +266,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Assistant, Casting Director, Executive Producer
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of movies.
-- Sample: `{{host}}/movies`
+    - Sample: `{{host}}/movies`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -193,7 +307,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Assistant, Casting Director, Executive Producer
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of actors.
-- Sample: `{{host}}/actors`
+    - Sample: `{{host}}/actors`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -251,7 +365,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Assistant, Casting Director, Executive Producer
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of casting.
-- Sample: `{{host}}/casting`
+    - Sample: `{{host}}/casting`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -307,7 +421,7 @@ The API will return seven error types when requests fail:
     - Permission: Executive Producer
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of the created movie.
-- Sample: `{{host}}/movies`
+    - Sample: `{{host}}/movies`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -326,7 +440,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Director and Executive Producer
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of the created actor.
-- Sample: `{{host}}/actors`
+    - Sample: `{{host}}/actors`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -346,7 +460,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Director and Executive Producer
     - Request Arguments: JWT token.
     - Return: success value and a dictionary of the created casting.
-- Sample: `{{host}}/casting`
+    - Sample: `{{host}}/casting`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -365,7 +479,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Director and Executive Producer
     - Request Arguments: JWT token and an ID of a movie to update.
     - Return: success value and a dictionary of the updated movie.
-- Sample: `{{host}}/movies/5`
+    - Sample: `{{host}}/movies/5`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -384,7 +498,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Director and Executive Producer
     - Request Arguments: JWT token and an ID of an actor to update.
     - Return: success value and a dictionary of the updated actor.
-- Sample: `{{host}}/actors/5`
+    - Sample: `{{host}}/actors/5`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -404,7 +518,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Director and Executive Producer
     - Request Arguments: JWT token and an ID of a casting to update.
     - Return: success value and a dictionary of the updated casting.
-- Sample: `{{host}}/casting/5`
+    - Sample: `{{host}}/casting/5`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -423,7 +537,7 @@ The API will return seven error types when requests fail:
     - Permission: Executive Producer
     - Request Arguments: JWT token and an ID of a movie to delete.
     - Return: success value and the ID of a deleted movie.
-- Sample: `{{host}}/movies/4`
+    - Sample: `{{host}}/movies/4`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -438,7 +552,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Director and Executive Producer
     - Request Arguments: JWT token and an ID of an actor to delete.
     - Return: success value and the ID of a deleted actor.
-- Sample: `{{host}}/actors/4`
+    - Sample: `{{host}}/actors/4`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -453,7 +567,7 @@ The API will return seven error types when requests fail:
     - Permission: Casting Director and Executive Producer
     - Request Arguments: JWT token and an ID of a casting to delete.
     - Return: success value and the ID of a deleted casting.
-- Sample: `{{host}}/casting/4`
+    - Sample: `{{host}}/casting/4`
     - Please use postman collection `./vamsi-capstone-heroku.postman_collection.json`
 ```
 {
@@ -462,26 +576,17 @@ The API will return seven error types when requests fail:
 }
 ```
 
-## Test on heroku
-- Test the endpoints with Postman. 
-    - Import the postman collection `./vamsi-capstone-heroku.postman_collection.json`
-    - Run the collection.
+##Deployment on Heroku 
 
-- Database on heroku can be recreated by the following steps.
-    - Run `heroku pg:psql`
-    - Execute `TRUNCATE "Casting";`, `TRUNCATE "Movies" CASCADE;`, and `TRUNCATE "Actor" CASCADE;`
-    - Exit heroku psql
-    - Import data with `heroku pg:psql --app vamsi-capstone-heroku postgresql-triangular-39700 < data.sql`
-
-## Test on local
-- Database on local can be created by the following steps.
-    - Run `CREATE DATABASE casting_agency_db;` to create a database for test.
-    - Import data and database schema with `psql -U postgres casting_agency_db < createdb.sql`
-
-- Database on local can be recreated by the following steps.
-    - Execute `TRUNCATE "Casting";`, `TRUNCATE "Movies" CASCADE;`, and `TRUNCATE "Actor" CASCADE;`
-    - Import data and database schema with `psql -U postgres casting_agency_db < data.sql`
-    
-- Test the endpoints by running `test_app.py`
-    - Execute `source setup.sh`
-    - Execute `py test_app.py`
+ 1. python manage.py db init
+ 2. python manage.py db migrate
+ 3. python manage.py db upgrade
+ 4. pip freeze > requirements.txt
+ 5. commit and push all your changes on github
+ 6. heroku create name_of_your_app
+ 7. git remote add heroku heroku_git_url
+ 8. heroku addons:create heroku-postgresql:hobby-dev --app name_of_your_application
+ 9. heroku config --app name_of_your_application
+ 10.Go to heroku dashboard and go to app > setting > Reveal Config Vars and configure all environment variables which are given in setup.sh
+ 11.git push heroku master
+ 12.heroku run python manage.py db upgrade --app name_of_your_application

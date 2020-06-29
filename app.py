@@ -37,7 +37,7 @@ def create_app(test_config=None):
 
     @app.route('/', methods=['POST', 'GET'])
     def health():
-        return jsonify("Healthy"),200
+        return jsonify("Healthy"), 200
 
     # MOVIES
 

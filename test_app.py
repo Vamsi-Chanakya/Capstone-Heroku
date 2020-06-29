@@ -2,13 +2,16 @@ import os
 import unittest
 import json
 from flask_sqlalchemy import SQLAlchemy
+
 from app import create_app
 from models import setup_db, Movie, Actor, Casting, db
 import datetime
 
+'''
+This class represents the casting agency test case.
+'''
 
 class CastingAgencyTestCase(unittest.TestCase):
-    """This class represents the casting agency test case."""
 
     def setUp(self):
         """Define test variables and initialize app."""
@@ -19,8 +22,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.executive_producer = os.getenv('EXECUTIVE_PRODUCER')
         self.database_name = "casting_agency_db"
         self.database_path = "postgres://{}:{}@{}/{}"\
-            .format('postgres', 'postgres', 'localhost:5432',
-                    self.database_name)
+            .format('postgres', 'postgres', 'localhost:5432', self.database_name)
         setup_db(self.app, self.database_path)
         db.create_all()
 
@@ -48,7 +50,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         }
 
         self.update_actor = {
-            'name': 'Edward Norto',
+            'name': 'Edward Norton',
             'age': 100,
             'gender': 'male',
         }
@@ -64,7 +66,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         }
 
     def tearDown(self):
-        """Executed after reach test."""
+        """Executed after each test."""
         pass
 
     '''
@@ -104,7 +106,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_get_movies_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -127,7 +129,7 @@ class CastingAgencyTestCase(unittest.TestCase):
                                  json=self.new_movie)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_create_new_movie_casting_director_fail(self):
@@ -141,7 +143,7 @@ class CastingAgencyTestCase(unittest.TestCase):
                                  json=self.new_movie)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_create_new_movie_executive_producer(self):
@@ -161,7 +163,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_create_new_movie_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -182,7 +184,7 @@ class CastingAgencyTestCase(unittest.TestCase):
                                   json=self.update_movie)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_update_movie_casting_director(self):
@@ -212,7 +214,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_update_movie_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -233,7 +235,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         data = json.loads(res.data)
         movie = Movie.query.get(4)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_delete_movie_casting_director_fail(self):
@@ -244,7 +246,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         data = json.loads(res.data)
         movie = Movie.query.get(4)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_delete_movie_executive_producer(self):
@@ -267,7 +269,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_delete_movie_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -317,7 +319,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_get_actors_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -340,7 +342,7 @@ class CastingAgencyTestCase(unittest.TestCase):
                                  json=self.new_actor)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_create_new_actor_casting_director(self):
@@ -370,7 +372,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_create_new_actor_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -391,7 +393,7 @@ class CastingAgencyTestCase(unittest.TestCase):
                                   json=self.update_actor)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_update_actor_casting_director(self):
@@ -421,7 +423,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_update_actor_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -445,7 +447,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         data = json.loads(res.data)
         actor = Actor.query.get(4)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_delete_actor_casting_director(self):
@@ -480,7 +482,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_delete_actor_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -530,7 +532,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_get_casting_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -553,7 +555,7 @@ class CastingAgencyTestCase(unittest.TestCase):
                                  json=self.new_casting)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_create_new_casting_casting_director(self):
@@ -583,7 +585,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_create_new_casting_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -607,7 +609,7 @@ class CastingAgencyTestCase(unittest.TestCase):
                                   json=self.update_casting)
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_update_casting_casting_director(self):
@@ -637,7 +639,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_update_casting_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
@@ -661,7 +663,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         data = json.loads(res.data)
         casting = Casting.query.get(4)
         self.assertEqual(res.status_code, 401)
-        self.assertEqual(data['code'], 'unauthorized')
+        self.assertEqual(data['code'], 'not_authorized')
         self.assertEqual(data['description'], 'Permission not found.')
 
     def test_delete_casting_casting_director(self):
@@ -696,7 +698,7 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 401)
         self.assertEqual(data['code'], 'auth_header_missing')
         self.assertEqual(data['description'],
-                         'Authorization header is expected.')
+                         'Authorization header is required.')
 
     def test_delete_casting_wrong_URL_fail(self):
         """Test 404 is sent when a wrong URL is given."""
